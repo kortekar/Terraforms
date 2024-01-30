@@ -20,6 +20,6 @@
 ### ✅ now open terminal in project folder run commands below 👇🏻
     terraform init
     terraform plan  
-### second command gives some extra code and give a blue print what else we can add in this code 👆🏻
+### ✅ second command gives some extra code and give a blue print what else we can add in this code 👆🏻
 ### ✅ to run the code 👇🏻
     terraform apply
