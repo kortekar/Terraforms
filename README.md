@@ -13,9 +13,12 @@
     key2 = " value "
     }
 ### ✅ resources and its type💁🏻  ( suggestion : open terraforms documentation you'll get examples )
-     resources "aws_instance"  "Name_of_your_choice" {
+    resources "aws_instance"  "Name_of_your_choice" {
     ami = < you'll get it in cloud console Amzon machine image code(AMI) ex: ami-567890123 >
     instance_type = "your_choice ex: t2micro"
+    
+    tags{ 
+        name = " Give any name i'm gonna call it ubunu server "   }
     }
 ### ✅ now open terminal in project folder run commands below 👇🏻
     terraform init
