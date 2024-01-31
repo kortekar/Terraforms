@@ -26,3 +26,83 @@
 ### ✅ second command gives some extra code and give a blue print what else we can add in this code 👆🏻
 ### ✅ to run the code 👇🏻
     terraform apply
+### ✅❗️❗️❗️❗️❗️❗️❗️ "terraform destroy" command will destroy the instance 🔪 even the absence of resources and other will act as destroy
+
+
+
+
+# 🪢👨🏻‍💻Creating a VPC ( virtual private cloud ) and working on subnet
+    resource "aws_vpc" "first-vpc" {
+    cidr_block = "10.0.0.0/16"
+    tags = {
+        Name = "production"
+      }
+    }
+
+
+### subnet
+    resource "aws_subnet" "subnet-1" {
+    vpc_id     = aws_vpc.main.id // just copy "aws_vpc" "first-vpc" from above resource alter
+
+    cidr_block = "10.0.1.0/24"
+
+    tags = {
+        Name = "production-subnet"
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Final Code❗️❗️❗️❗️❗️
+    provider "aws" {
+      region = "us-north-1"
+      access_key = "my access key"
+      secret_key = "my secret key"
+    }
+    resources "aws_instance" "my-first-server" {
+        ami =" "
+        instance_type = "t2.micro"
+        tags = {
+            Name = "HelloWorld"
+        }
+    }
+    resource "aws_vpc" "main" {
+    cidr_block = "10.0.0.0/16"
+    tags = {
+        Name = "production"
+      }
+    }
+    resource "aws_subnet" "subnet-1" {
+    vpc_id     = aws_vpc.main.id
+    cidr_block = "10.0.1.0/24"
+
+    tags = {
+        Name = "production-subnet"
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
